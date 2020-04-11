@@ -4,7 +4,7 @@ const getUsers = (req ,res ,db) => {
     .then(users => {
         res.json(users)
     })
-    .catch(err => res.json("bad request"))
+    .catch(err => res.json("bad request users"))
 }
 
 module.exports = {
