@@ -27,7 +27,7 @@ app.use(express.json())
 
 
 
-app.get('/', (req, res) => Users.getUsers(req, res, db))
+app.get('/', (req, res) => res.json("this is calling now"))
 
 app.post('/signin', (req, res) => signIn.handleSingin(req, res, db, bcrypt))
 
