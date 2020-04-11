@@ -40,5 +40,5 @@ app.post('/imageUrl', (req, res) => image.handleClarifiApi(req, res))
 
 
 app.listen(process.env.PORT ||3000, () => {
-    console.log("app running in 3000")
+    console.log(`app running in ${process.env.PORT}`)
 }) 
