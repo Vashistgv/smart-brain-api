@@ -1,7 +1,7 @@
 const handleRegister = (req, res, db, bcrypt) => {
     const { email, password, name } = req.body
     const hash = bcrypt.hashSync(password);
-    console.log("this is bbbbbbbbbbbbbbbbbbbbbbbb", email , db , "dbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+    console.log("this is bbbbbbbbbbbbbbbbbbbbbbbb", email , db.select('*').from('users') , "dbbbbbbbbbbbbbbbbbbbbbbbbbbb")
     db.insert({
         hash: hash,
         email: email
