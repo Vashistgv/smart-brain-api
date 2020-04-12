@@ -14,6 +14,12 @@ const handleRegister = (req, res, db, bcrypt) => {
         console.log("this is trxxxxxx ")
 
     })
+
+    db.select('*').from('users')
+    .then(user => {
+       console.log("user detailssssssssss" ,user)
+    }) 
+    .catch(err => res.json("error in fetching users"))
         .catch(err => res.status(400).json("user exist"))
 
 
