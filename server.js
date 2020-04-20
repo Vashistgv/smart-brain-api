@@ -25,10 +25,12 @@ app.use(express.json())
 
 
 
-app.get('/', (req, res) =>  db.select('*').from('users')
-.then(users => {
-    res.json(users)
-}).catch(res.json("this is error")) )
+app.get('/', (req, res) => {
+    db.select('*').from('users')
+    .then(users => {
+        res.json(users)
+    }).catch(err => res.json("this is error"))
+}  )
 
 app.post('/signin', (req, res) => signIn.handleSingin(req, res, db, bcrypt))
 
