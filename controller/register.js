@@ -13,7 +13,7 @@ trx.insert({
     return  trx('users')
     .returning('*')
     .insert({
-        email : LoginEmail[0] ,
+        email : email ,
         name  : name ,
         joined : new Date ()
     }).then(response => res.json(response[0]))
