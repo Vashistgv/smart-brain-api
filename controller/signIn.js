@@ -1,7 +1,7 @@
  const handleSingin = (req ,res , db , bcrypt) =>  {
 
     const {email , password} = req.body
-   
+   if(email && password) {
     db.select('email' , 'hash').from('login')
     .where('email' , '=' , email)
     .then(data => {
@@ -21,6 +21,11 @@
     })
     .catch(err => res.status(400).json("invalid credentails "))
 
+   } else {
+       return res.status(400).json("fill the details")
+   }
+
+   
 }
 
 module.exports = {
