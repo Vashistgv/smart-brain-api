@@ -12,7 +12,7 @@ const handleRegister = (req , res ,db ,bcrypt) => {
             return  trx('users')
             .returning('*')
             .insert({
-                email : email ,
+                email : LoginEmail[0] ,
                 name  : name ,
                 joined : new Date ()
             }).then(response => res.json(response[0]))
